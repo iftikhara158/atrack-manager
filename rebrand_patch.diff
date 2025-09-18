@@ -1,11 +1,11 @@
 *** Begin Patch
-*** Update File: atrack-manager-main/lib/main_screen.dart
+*** Update File: atrack-manager/lib/main_screen.dart
 @@
 -    return _preferences.getString(_urlKey) ?? 'https://demo.traccar.org';
 +    return _preferences.getString(_urlKey) ?? 'https://server.atrack.com.pk';
 *** End Patch
 *** Begin Patch
-*** Update File: atrack-manager-main/tool/brand.dart
+*** Update File: atrack-manager/tool/brand.dart
 @@
 -    RegExp(r'https://demo\.traccar\.org'),
 +    RegExp(r'https://server\.atrack\.com\.pk'),
@@ -14,13 +14,13 @@
 +    'com.atrack.manager',
 *** End Patch
 *** Begin Patch
-*** Update File: atrack-manager-main/android/app/src/main/AndroidManifest.xml
+*** Update File: atrack-manager/android/app/src/main/AndroidManifest.xml
 @@
 -    android:label="Traccar Manager"
 +    android:label="aTrack Manager"
 *** End Patch
 *** Begin Patch
-*** Update File: atrack-manager-main/ios/Runner/Info.plist
+*** Update File: atrack-manager/ios/Runner/Info.plist
 @@
 -<key>CFBundleDisplayName</key>
 -<string>Traccar Manager</string>
@@ -28,7 +28,7 @@
 +<string>aTrack Manager</string>
 *** End Patch
 *** Begin Patch
-*** Update File: atrack-manager-main/pubspec.yaml
+*** Update File: atrack-manager/pubspec.yaml
 @@
 -name: traccar_manager
 +name: atrack_manager
@@ -37,7 +37,7 @@
 +description: "aTrack Manager"
 *** End Patch
 *** Begin Patch
-*** Update File: atrack-manager-main/android/app/build.gradle.kts
+*** Update File: atrack-manager/android/app/build.gradle.kts
 @@
 -    namespace = "org.traccar.manager"
 -    applicationId = "org.traccar.manager"
@@ -45,40 +45,40 @@
 +    applicationId = "com.atrack.manager"
 *** End Patch
 *** Begin Patch
-*** Update File: atrack-manager-main/android/app/build.gradle
+*** Update File: atrack-manager/android/app/build.gradle
 @@
 -    applicationId "org.traccar.manager"
 +    applicationId "com.atrack.manager"
 *** End Patch
 *** Begin Patch
-*** Update File: atrack-manager-main/lib/main.dart
+*** Update File: atrack-manager/lib/main.dart
 @@
 -  if (uri.scheme == 'org.traccar.manager') {
 +  if (uri.scheme == 'com.atrack.manager') {
 *** End Patch
 *** Begin Patch
-*** Update File: atrack-manager-main/tool/brand.dart
+*** Update File: atrack-manager/tool/brand.dart
 @@
 -  // PRODUCT_BUNDLE_IDENTIFIER = org.traccar.manager
 +  // PRODUCT_BUNDLE_IDENTIFIER = com.atrack.manager
 *** End Patch
 *** Begin Patch
-*** Update File: atrack-manager-main/README.md
+*** Update File: atrack-manager/README.md
 @@
 -Traccar Manager
 +aTrack Manager
 *** End Patch
 *** Begin Patch
-*** Add File: atrack-manager-main/RENAME_INSTRUCTIONS.md
+*** Add File: atrack-manager/RENAME_INSTRUCTIONS.md
 +IMPORTANT: one-click rebrand & build notes
 +
 +1) I changed the runtime default server to https://server.atrack.com.pk and rebranded app ids to com.atrack.manager and name to "aTrack Manager".
 +
 +2) Before building, place your Android google-services.json in:
-+   atrack-manager-main/android/app/google-services.json
++   atrack-manager/android/app/google-services.json
 +
 +   Place your iOS GoogleService-Info.plist in:
-+   atrack-manager-main/ios/Runner/GoogleService-Info.plist
++   atrack-manager/ios/Runner/GoogleService-Info.plist
 +
 +3) If you want the Android application id to match a different identifier, update android/app/build.gradle(.kts) and tool/brand.dart accordingly. Note: package (Java/Kotlin) source paths do not need renaming for packaging, but if you intend to change the Kotlin/Java package statements you must also rename directories under android/app/src/main/kotlin/...
 +
