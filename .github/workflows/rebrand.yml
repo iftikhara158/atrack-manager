@@ -4,7 +4,10 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch: # run manually if needed
+  workflow_dispatch:
+
+permissions:
+  contents: write   # 👈 allow pushing commits back
 
 jobs:
   rebrand:
@@ -13,6 +16,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }} # 👈 authenticate checkout with write access
 
       - name: Apply rebrand patch
         run: |
